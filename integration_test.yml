@@ -1,4 +1,4 @@
-name: Build_Test_Unit
+name: Buld_Test_Integration
 
 on:
   push:
@@ -22,5 +22,5 @@ jobs:
       run: dotnet restore
     - name: Build
       run: dotnet build --no-restore
-    - name: Unit Test Execution
+    - name: Integration Test Execution
       run: dotnet test HouseRentingSystem.Tests/
