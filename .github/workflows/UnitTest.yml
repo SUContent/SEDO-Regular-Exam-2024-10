@@ -3,8 +3,6 @@ name: Build_Test_Unit
 on:
   push:
     branches: [ "develop" ]
-  pull_request:
-    branches: [ "main" ]
 
 jobs:
   build_run_unit_tests:

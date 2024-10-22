@@ -37,7 +37,7 @@ namespace HouseRentingSystem.Tests.UnitTests
 
             this.Agent = new Agent()
             {
-                PhoneNumber = "+359111111111",
+                PhoneNumber = "aaaaa",
                 User = new User()
                 {
                     Id = "TestUserId",
