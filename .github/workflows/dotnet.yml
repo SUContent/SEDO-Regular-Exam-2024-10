@@ -1,10 +1,8 @@
-name: Build_Test
+name: Build_Test_Unit
 
 on:
   push:
-    branches:
-      - develop
-      - staging
+    branches: [ "develop" ]
   pull_request:
     branches: [ "main" ]
 
@@ -14,7 +12,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
+    - name: Checkout the code
+      uses: actions/checkout@v4
     - name: Setup .NET
       uses: actions/setup-dotnet@v4
       with:
@@ -23,5 +22,5 @@ jobs:
       run: dotnet restore
     - name: Build
       run: dotnet build --no-restore
-    - name: Test
-      run: dotnet test --no-build --verbosity normal
+    - name: Unit Test Execution
+      run: dotnet test SEDO-Regular-Exam-2024-10\HouseRentingSystem.UnitTests
