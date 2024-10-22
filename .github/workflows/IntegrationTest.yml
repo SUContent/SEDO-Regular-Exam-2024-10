@@ -1,0 +1,26 @@
+name: Buld_Test_Integration
+
+on:
+  push:
+    branches: [ "staging" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build_run_unit_tests:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout the code
+      uses: actions/checkout@v4
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 6.0.x
+    - name: Restore dependencies
+      run: dotnet restore
+    - name: Build
+      run: dotnet build --no-restore
+    - name: Integration Test Execution
+      run: dotnet test HouseRentingSystem.Tests/
