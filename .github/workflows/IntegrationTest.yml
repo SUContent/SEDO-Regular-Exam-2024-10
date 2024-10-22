@@ -3,8 +3,6 @@ name: Buld_Test_Integration
 on:
   push:
     branches: [ "staging" ]
-  pull_request:
-    branches: [ "main" ]
 
 jobs:
   build_run_unit_tests:
