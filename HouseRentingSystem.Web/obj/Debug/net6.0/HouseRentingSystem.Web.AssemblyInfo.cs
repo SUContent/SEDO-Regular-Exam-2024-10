@@ -11,11 +11,12 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.AspNetCore.Identity.UI.UIFrameworkAttribute("Bootstrap5")]
 [assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("aspnet-HouseRentingSystem-B6C45F3D-B6A3-4320-A6C0-78E60A403630")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("HouseRentingSystem.Web")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d2ce79965a8adc397ada1b28b7f3a033681b1cae")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+75a647f99c9d6c0abf182fd51428261d25d2e8f0")]
 [assembly: System.Reflection.AssemblyProductAttribute("HouseRentingSystem.Web")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HouseRentingSystem.Web")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
