@@ -24,4 +24,4 @@ jobs:
     - name: Build
       run: dotnet build --no-restore
     - name: Excetute Integration Test
-      run: dotnet test  --no-build --verbosity normal
+      run: dotnet test HouseRentingSystem.Tests/HouseRentingSystem.Tests.csproj --no-build --verbosity normal
