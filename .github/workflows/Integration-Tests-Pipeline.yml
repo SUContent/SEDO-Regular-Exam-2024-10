@@ -1,4 +1,4 @@
-name: Build Applicatin and Run Integration tests
+name: Build Application and Run Integration tests
 
 on:
   push:
