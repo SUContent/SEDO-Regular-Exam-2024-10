@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Restore Dependecies') { 
             steps {
-              bat 'dotenet restore' // 
+              bat 'dotnet restore' // 
             }
         }
         stage('Dotnet Build') { 
