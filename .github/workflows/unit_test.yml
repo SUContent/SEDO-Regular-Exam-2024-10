@@ -1,5 +1,3 @@
-
-
 name: Build and run unit tests
 
 on:
