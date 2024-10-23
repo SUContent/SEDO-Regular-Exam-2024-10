@@ -1,0 +1,9 @@
+HouseRentingSystem.Services/bin
+HouseRentingSystem.Services/obj
+HouseRentingSystem.Tests/bin
+HouseRentingSystem.Tests/obj
+HouseRentingSystem.UnitTests/bin
+HouseRentingSystem.UnitTests/obj
+HouseRentingSystem.Web/bin
+HouseRentingSystem.Web/obj
+.vs/
