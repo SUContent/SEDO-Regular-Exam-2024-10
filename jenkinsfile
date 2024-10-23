@@ -9,10 +9,10 @@ pipeline {
         }
         stage('Dotnet build') {
             steps {
-                bat 'dotnet build'
+                bat 'dotnet build --no-restore'
             }
         }
-        stage('Deploy') {
+        stage('Execute tests') {
             steps {
                 bat 'dotnet test --no-build --verbosity normal'
             }
