@@ -21,4 +21,4 @@ jobs:
     - name: Build
       run: dotnet build --no-restore
     - name: Execute Unit Test
-      run: dotnet test HouseRentingSystem.UnitTests\HouseRentingSystem.UnitTests.csproj --no-build --verbosity normal
+      run: dotnet test HouseRentingSystem.UnitTests/HouseRentingSystem.UnitTests.csproj --no-build --verbosity normal
