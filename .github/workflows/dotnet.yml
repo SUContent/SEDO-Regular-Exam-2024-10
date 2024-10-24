@@ -5,7 +5,7 @@ name: Build and run unit tests
 
 on:
   push:
-    branches: [ "develp", "staging" ]
+    branches: [ "develp" ]
   
 jobs:
   build_unit_tests:
