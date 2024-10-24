@@ -1,13 +1,11 @@
-name: Built and run unit tests
+name: Build and run unit tests
 
 on:
   push:
     branches: [ "develop" ]
 
-
 jobs:
   build_unit_tests:
-  
 
     runs-on: ubuntu-latest
 
@@ -23,4 +21,4 @@ jobs:
     - name: Build
       run: dotnet build --no-restore
     - name: Execute Unit Test
-      run: dotnet test HouseRentingSystem.UnitTests/HouseRentingSystem.UnitTests.csproj--no-build --verbosity normal
+      run: dotnet test HouseRentingSystem.UnitTests/HouseRentingSystem.UnitTests.csproj --no-build --verbosity normal
