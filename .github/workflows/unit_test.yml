@@ -5,23 +5,23 @@ name: .NET
 
 on:
   push:
-    branches: [ "main" ]
-  
+    branches: [ "develop" ]
+ 
 jobs:
-  build:
+  build_unit_test:
 
     runs-on: ubuntu-latest
 
     steps:
-    - name: Run unit tests
+    - name: Checkout the repository
       uses: actions/checkout@v4
-    - name: Setup .NET
+    - name: Setup .NET version 6
       uses: actions/setup-dotnet@v4
       with:
         dotnet-version: 6.0.x
     - name: Restore dependencies
       run: dotnet restore
-    - name: Build
+    - name: Build unit tests
       run: dotnet build --no-restore
     - name: Test
       run: dotnet test HouseRentingSystem.UnitTests/HouseRentingSystem.UnitTests.csproj --no-build --verbosity normal
