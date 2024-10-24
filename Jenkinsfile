@@ -2,17 +2,17 @@ pipeline {
   agent any
   stages {
     stage('Restore dependencies') {
-      setps {
+      steps {
         bar 'dotnet restore'
       }
     }
     stage('Dotnet Build') {
-      setps {
+      steps {
         bar 'dotnet build --no-restore'
       }
     }
     stage('Execute tests') {
-      setps {
+      steps {
         bar 'dotnet test --no-build --verbosity normal'
       }
     }
