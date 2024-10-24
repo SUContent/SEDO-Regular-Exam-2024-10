@@ -9,12 +9,12 @@ pipeline {
         }
     stage('Dotnet Build') { 
      steps {
-         'dotnet build --no-restore' 
+          bat 'dotnet build --no-restore' 
             }
         }
     stage('Ececute Tests') { 
         steps {
-         'dotnet test --no-build --verbosity normal'
+          bat 'dotnet test --no-build --verbosity normal'
             }
         }
     }
