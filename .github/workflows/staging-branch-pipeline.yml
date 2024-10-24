@@ -2,7 +2,7 @@ name: Staging Branch Build and Integration Tests
 
 on:
   push:
-    branches: [ "develop" ]
+    branches: [ "staging" ]
 
 jobs:
   build_and_integration_test:
@@ -22,4 +22,3 @@ jobs:
       run: dotnet build --no-restore
     - name: Execute Unit Tests
       run: dotnet test HouseRentingSystem.Tests/HouseRentingSystem.Tests.csproj --no-build --verbosity normal
-      
