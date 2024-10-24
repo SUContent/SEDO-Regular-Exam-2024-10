@@ -5,7 +5,7 @@ on:
     branches: [ "develop" ]
     
 jobs:
-  build:
+  build_and_test:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout the repo
