@@ -1,4 +1,4 @@
-name: Build and run unit test
+name: Build and Run Unit Tests
 
 on:
   push:
@@ -12,13 +12,17 @@ jobs:
     steps:
     - name: Checkout the repository
       uses: actions/checkout@v4
+
     - name: Setup .NET version 6
       uses: actions/setup-dotnet@v4
       with:
         dotnet-version: 8.0.x
+
     - name: Restore dependencies
       run: dotnet restore
+
     - name: Build
       run: dotnet build --no-restore
+
     - name: Execute Unit Test
-      run: dotnet test dotnet test HouseRentingSystem.UnitTests/HouseRentingSystem.UnitTests.csproj --no-build --verbosity normal
+      run: dotnet test HouseRentingSystem.UnitTests/HouseRentingSystem.UnitTests.csproj --no-build --verbosity normal
