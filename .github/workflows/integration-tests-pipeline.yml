@@ -1,0 +1,22 @@
+name: Build and Start Integration Tests
+
+on:
+  push:
+    branches: [ "staging" ]
+    
+jobs:
+  build_and_test:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout the repo
+      uses: actions/checkout@v4
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 6.0.x
+    - name: Restore dependencies
+      run: dotnet restore
+    - name: Build the application
+      run: dotnet build --no-restore
+    - name: Start the unit tests
+      run: dotnet test HouseRentingSystem.Tests/HouseRentingSystem.Tests.csproj --no-build --verbosity normal
