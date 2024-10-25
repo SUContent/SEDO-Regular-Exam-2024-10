@@ -9,18 +9,26 @@ pipeline {
             }
         }
 
+        stage('Debug Branch Name') {
+            steps {
+                script {
+                    echo "Current branch is: ${env.BRANCH_NAME}"
+                }
+            }
+        }
+
         stage('Set up .NET') {
             steps {
                 script {
-                    // Set up .NET SDK version (Make sure .NET SDK is installed in Jenkins container)
-                    sh 'dotnet --version' // Verify the installed .NET version
+                    // Verify the installed .NET version
+                    sh 'dotnet --version' 
                 }
             }
         }
 
         stage('Restore dependencies') {
             steps {
-                // Restore the dependencies
+                // Restore the dependencies for the entire solution
                 sh 'dotnet restore'
             }
         }
@@ -32,7 +40,7 @@ pipeline {
             }
         }
 
-        stage('Unit Tests') {
+        stage('Run Unit Tests') {
             when {
                 expression { 
                     // Run unit tests only on the 'feature-ci-pipeline' branch
@@ -40,8 +48,9 @@ pipeline {
                 }
             }
             steps {
-                // Run unit tests
-                sh 'dotnet test --no-restore --verbosity normal'
+                // Run unit tests from the specific projects
+                sh 'dotnet test HouseRentingSystem.UnitTests/HouseRentingSystem.UnitTests.csproj --no-restore --verbosity normal'
+                sh 'dotnet test HouseRentingSystem.Tests/HouseRentingSystem.Tests.csproj --no-restore --verbosity normal'
             }
         }
     }
