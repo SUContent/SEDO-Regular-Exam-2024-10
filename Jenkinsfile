@@ -9,13 +9,20 @@ pipeline {
             }
         }
 
+        stage('Debug Branch Name') {
+            steps {
+                script {
+                    echo "Current branch: ${env.BRANCH_NAME}"
+                }
+            }
+        }
+
         stage('Set up .NET') {
             steps {
-                // Set up .NET SDK version
                 script {
                     // Assuming the environment variable 'DOTNET_VERSION' is set to '6.0.x'
                     def dotnetVersion = '6.0.x'
-                    sh "dotnet --version" // This is to verify the version before proceeding
+                    sh "dotnet --version" // Verify the version before proceeding
                 }
             }
         }
@@ -37,8 +44,7 @@ pipeline {
         stage('Unit Tests') {
             when {
                 expression { 
-                    // Run unit tests only on the 'develop' branch
-                    return env.BRANCH_NAME == 'develop' 
+                    return env.BRANCH_NAME in ['develop', 'feature-ci-pipeline'] 
                 }
             }
             steps {
@@ -53,7 +59,6 @@ pipeline {
         stage('Integration Tests') {
             when {
                 expression { 
-                    // Run integration tests only on the 'staging' branch
                     return env.BRANCH_NAME == 'staging' 
                 }
             }
