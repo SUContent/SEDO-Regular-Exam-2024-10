@@ -1,0 +1,13 @@
+C:\Users\lasss\Desktop\ExamPRep\HouseRentingSystem.Services\bin\Debug\net6.0\HouseRentingSystem.Services.deps.json
+C:\Users\lasss\Desktop\ExamPRep\HouseRentingSystem.Services\bin\Debug\net6.0\HouseRentingSystem.Services.runtimeconfig.json
+C:\Users\lasss\Desktop\ExamPRep\HouseRentingSystem.Services\bin\Debug\net6.0\HouseRentingSystem.Services.dll
+C:\Users\lasss\Desktop\ExamPRep\HouseRentingSystem.Services\bin\Debug\net6.0\HouseRentingSystem.Services.pdb
+C:\Users\lasss\Desktop\ExamPRep\HouseRentingSystem.Services\obj\Debug\net6.0\HouseRentingSystem.Services.csproj.AssemblyReference.cache
+C:\Users\lasss\Desktop\ExamPRep\HouseRentingSystem.Services\obj\Debug\net6.0\HouseRentingSystem.Services.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lasss\Desktop\ExamPRep\HouseRentingSystem.Services\obj\Debug\net6.0\HouseRentingSystem.Services.AssemblyInfoInputs.cache
+C:\Users\lasss\Desktop\ExamPRep\HouseRentingSystem.Services\obj\Debug\net6.0\HouseRentingSystem.Services.AssemblyInfo.cs
+C:\Users\lasss\Desktop\ExamPRep\HouseRentingSystem.Services\obj\Debug\net6.0\HouseRentingSystem.Services.csproj.CoreCompileInputs.cache
+C:\Users\lasss\Desktop\ExamPRep\HouseRentingSystem.Services\obj\Debug\net6.0\HouseRentingSystem.Services.sourcelink.json
+C:\Users\lasss\Desktop\ExamPRep\HouseRentingSystem.Services\obj\Debug\net6.0\HouseRentingSystem.Services.dll
+C:\Users\lasss\Desktop\ExamPRep\HouseRentingSystem.Services\obj\Debug\net6.0\HouseRentingSystem.Services.pdb
+C:\Users\lasss\Desktop\ExamPRep\HouseRentingSystem.Services\obj\Debug\net6.0\HouseRentingSystem.Services.genruntimeconfig.cache
