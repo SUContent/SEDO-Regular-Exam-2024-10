@@ -1,19 +1,28 @@
 pipeline {
     agent any
+
     stages {
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+
         stage('Restore dependencies') {
             steps {
-                bat 'dotnet restore'
+                bat 'C:/Program Files/dotnet/dotnet.exe restore'
             }
         }
-        stage('Dotnet Build') {
+
+        stage('Build') {
             steps {
-                bat 'dotnet build --no-restore'
+                bat 'C:/Program Files/dotnet/dotnet.exe build --no-restore'
             }
         }
-        stage('Execute tests') {
+
+        stage('Run Tests') {
             steps {
-                bat 'dotnet test --no-build --verbosity normal'
+                bat 'C:/Program Files/dotnet/dotnet.exe test --no-build'
             }
         }
     }
