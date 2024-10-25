@@ -25,7 +25,7 @@ pipeline{
           stage("Run tests")
         {
             steps{
-                bat 'dotnet tests C:\Users\lasss\Desktop\ExamPRep\HouseRentingSystem.UnitTests --no-build --verbosity normal'
+                bat 'dotnet tests  --no-build --verbosity normal'
             }
         }
     }
