@@ -4,7 +4,7 @@ pipeline {
     stages {        
         stage('Restore .NET') {
             steps {
-                bat 'dotnet restore'
+                bat 'dotnet restore --verbosity quiet'
             }
         }
         stage('Build Solution') {
