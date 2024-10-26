@@ -1,14 +1,13 @@
 pipeline {
     agent any
-
     triggers {
         pollSCM('* * * * *')
-        when {
-            branch 'feature-ci-pipeline'
-        }
     }
 
     stages {
+        when {
+            branch 'feature-ci-pipeline'
+        }
         stage('Restore Dependencies') {
             steps {
                 bat 'dotnet restore'
