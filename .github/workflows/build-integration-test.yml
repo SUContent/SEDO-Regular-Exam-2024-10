@@ -1,11 +1,11 @@
-name:  Build and run unit tests
+name:  Build and run integration tests
 
 on:
   push:
     branches: [ "staging" ]
 
 jobs:
-  build-and-unit-test:
+  build-and-integration-test:
     runs-on: ubuntu-latest
 
     steps:
