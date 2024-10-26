@@ -2,6 +2,11 @@ pipeline {
     agent any
 
     stages {
+        stage("Test") {
+            steps {
+                echo "BRANCH_NAME: ${env.BRANCH_NAME}"
+            }
+        }
         stage("Run pipeline") {
             when {
                 branch "feature-ci-pipeline"
