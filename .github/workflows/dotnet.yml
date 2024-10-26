@@ -1,5 +1,3 @@
-
-
 name: build_unit_tests_on_push_to_develop_branch
 
 on:
