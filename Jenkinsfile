@@ -1,6 +1,13 @@
 pipeline {
     agent any
 
+    triggers {
+        pollSCM('* * * * *')
+        when {
+            branch 'feature-ci-pipeline'
+        }
+    }
+
     stages {
         stage('Restore Dependencies') {
             steps {
