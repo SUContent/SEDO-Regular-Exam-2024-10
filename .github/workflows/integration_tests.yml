@@ -1,8 +1,8 @@
-name: Build and run unit tests
+name: Build and run integration tests
 
 on:
   push:
-    branches: [ "develop" ]
+    branches: [ "staging" ]
 
 jobs:
   build:
@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: checkout code 
+    - name: Checkout code
       uses: actions/checkout@v4
     - name: Setup .NET
       uses: actions/setup-dotnet@v4
@@ -20,5 +20,5 @@ jobs:
       run: dotnet restore
     - name: Build
       run: dotnet build --no-restore
-    - name: Execute unit tests
-      run: dotnet test HouseRentingSystem.UnitTests/HouseRentingSystem.UnitTests.csproj --no-build --verbosity normal
+    - name: Execute integration tests
+      run: dotnet test HouseRentingSystem.Tests/HouseRentingSystem.Tests.csproj --no-build --verbosity normal
