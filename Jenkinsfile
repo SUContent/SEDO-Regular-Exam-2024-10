@@ -2,12 +2,6 @@ pipeline {
     agent any
 
     stages {
-        stage('Checkout Code') {
-            steps {
-                git url: 'https://your-repo-url.git', branch: 'develop'
-            }
-        }
-
         stage('Restore Dependencies') {
             steps {
                 bat 'dotnet restore'
