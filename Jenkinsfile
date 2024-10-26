@@ -14,7 +14,7 @@ pipeline {
         }
         stage('Perform All Tests') {
             steps {
-                bat 'dotnet test'
+                bat 'dotnet test --verbosity quiet'
             }
         }
         
