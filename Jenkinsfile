@@ -2,11 +2,6 @@ pipeline {
     agent any
 
     stages {
-        stage('Verify dotnet') {
-            steps {
-                bat 'dotnet --version'
-            }
-        }
         stage('Restore dependencies') {
             steps {
                 bat 'dotnet restore'
