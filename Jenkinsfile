@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     when {
-        branch "master"
+        branch "feature-ci-pipeline"
     }
     stages {
         stage("Restore dependencies") {
