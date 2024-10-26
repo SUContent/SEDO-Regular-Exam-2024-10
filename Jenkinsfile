@@ -1,8 +1,8 @@
 pipeline {
     agent any
 
-    if (env.BRANCH_NAME == "feature-ci-pipeline") {
-        stages {
+    stages {
+        if (env.BRANCH_NAME == "feature-ci-pipeline") {
             stage("Restore dependencies") {
                 steps {
                     bat "dotnet restore"
