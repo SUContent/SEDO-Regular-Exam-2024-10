@@ -1,0 +1,37 @@
+name: Build and Run Tests
+
+on:
+  push:
+    branches:
+      - develop
+      - staging
+
+jobs:
+  build_and_test:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout the repository
+      uses: actions/checkout@v4
+      
+    - name: Setup .NET version 6
+      uses: actions setup-dotnet@v4
+      with:
+        dotnet-version: 6.0.x
+
+    - name: Restore dependencies
+      run: dotnet restore
+
+    - name: Build the project
+      run: dotnet build --no-restore
+
+    # Conditional step for unit tests on develop branch
+    - name: Run Unit Tests
+      if: github.ref == 'refs/heads/develop'
+      run: dotnet test HouseRentingSystem.UnitTests/HouseRentingSystem.UnitTests.csproj --no-build --verbosity normal
+
+    # Conditional step for integration tests on staging branch
+    - name: Run Integration Tests
+      if: github.ref == 'refs/heads/staging'
+      run: dotnet test HouseRentingSystem.IntegrationTests/HouseRentingSystem.IntegrationTests.csproj --no-build --verbosity normal
