@@ -1,0 +1,26 @@
+name: build and run integration tests
+
+on:
+  push:
+    branches: [ "staging" ]
+  # pull_request:
+  #   branches: [ "main" ]
+
+jobs:
+  build_integration_tests:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: checkout repo
+      uses: actions/checkout@v4
+    - name: Setup .NET version 8.x
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 8.0.x
+    - name: Restore dependencies
+      run: dotnet restore
+    - name: Build
+      run: dotnet build --no-restore
+    - name: Run integration tests
+      run: dotnet test SoftUniBazar.IntegrationTests/SoftUniBazar.IntegrationTests.csproj --no-build --verbosity normal
