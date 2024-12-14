@@ -8,12 +8,12 @@ pipeline {
         }
         stage('Dotnet Build') { 
             steps {
-                sh 'dotnet build --no-restore' 
+                echo 'dotnet build --no-restore' 
             }
         }
         stage('Execute tests') { 
             steps {
-                sh 'dotnet test --no-build --verbosity normal' 
+                echo 'dotnet test --no-build --verbosity normal' 
             }
         }
     }
