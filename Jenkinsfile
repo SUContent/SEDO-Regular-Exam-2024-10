@@ -1,19 +1,19 @@
 pipeline {
     agent any
     stages {
-        stage('Restore dependancy') {
+        stage('Restore dependencies') {
             steps {
                 bat 'dotnet restore'
             }
         }
         stage('Dotnet Build') {
             steps {
-                bat 'dotnet biuld'
+                bat 'dotnet build --no-restore'
             }
         }
-        stage('Dotnet Test') {
+        stage('Execute Tsets') {
             steps {
-                bat 'dotnet test'
+                bat 'dotnet test --no-build --verbosity normal'
             }
         }
     }
