@@ -3,17 +3,17 @@ pipeline {
     stages {
         stage('Restore dependencies') {
             steps {
-                bat 'dotnet restore'
+                sh 'dotnet restore'
             }
         }
         stage('Dotnet Build') {
             steps {
-                bat 'dotnet build --no-restore'
+                sh 'dotnet build --no-restore'
             }
         }
         stage('Execute Tsets') {
             steps {
-                bat 'dotnet test --no-build --verbosity normal'
+                sh 'dotnet test --no-build --verbosity normal'
             }
         }
     }
