@@ -1,9 +1,6 @@
 pipeline {
     agent any
   
-    triggers {
-        githubPush(branch: 'feature-ci-pipeline')
-    }
     stages {
         stage('Restore dependencies') {
             steps {
