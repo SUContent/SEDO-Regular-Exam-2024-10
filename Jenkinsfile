@@ -1,9 +1,6 @@
 pipeline {
     agent any
 
-    triggers {
-        pollSCM('* * * * *') // Polls SCM every minute (adjust as needed)
-    }
 
     stages {
 
