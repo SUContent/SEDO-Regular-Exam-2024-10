@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Restore dependencies') {
             steps {
-                sh 'dotnet restore'
+                sh 'export PATH=$HOME/.dotnet:$PATH && dotnet restore'
             }
         }
 
