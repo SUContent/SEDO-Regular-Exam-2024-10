@@ -1,10 +1,13 @@
 pipeline {
     agent any
-
+    environment {
+        DOTNET_ROOT = "/usr/local/share/dotnet"
+        PATH = "$DOTNET_ROOT:$PATH"
+    }
     stages {
         stage('Restore dependencies') {
             steps {
-                sh 'export PATH=$HOME/.dotnet:$PATH && dotnet restore'
+                sh 'dotnet restore'
             }
         }
 
