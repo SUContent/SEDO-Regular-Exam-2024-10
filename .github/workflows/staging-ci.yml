@@ -1,0 +1,22 @@
+name: .NET Build and test
+
+on:
+  push:
+    branches: [ "staging"]
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 9
+    - name: Restore dependencies
+      run: dotnet restore --verbosity normal
+    - name: Build
+      run: dotnet build --no-restore --verbosity normal
+    - name: Run the integration tests
+      run: dotnet test HouseRentingSystem.Tests/HouseRentingSystem.Tests.csproj --no-build --verbosity normal
