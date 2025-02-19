@@ -13,8 +13,6 @@ pipeline {
             }
         }
 
-        // 
-
         // Restore dependencies
         stage('Restore Dependencies') {
             steps {
@@ -44,5 +42,20 @@ pipeline {
                 }
             }
         }
+    }
 
-        //
+    // Actions on success or failure
+    post {
+        always {
+            echo 'Cleaning up after build.'
+        }
+
+        success {
+            echo 'Build and tests passed successfully!'
+        }
+
+        failure {
+            echo 'Build or tests failed. Please check the logs!'
+        }
+    }
+}
