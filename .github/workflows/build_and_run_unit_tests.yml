@@ -17,9 +17,12 @@ jobs:
       with:
         dotnet-version: 6.0.x
 
+    - name: Restore NuGet Packages
+      run: dotnet restore
+
     - name: Build the Project
       run: dotnet build --no-restore
 
     - name: Run Unit Tests
-      run: dotnet test HouseRentingSystem.UnitTests\HouseRentingSystem.UnitTests.csproj --no-build --verbosity normal
+      run: dotnet test HouseRentingSystem.UnitTests/HouseRentingSystem.UnitTests.csproj --no-build --verbosity normal
 
