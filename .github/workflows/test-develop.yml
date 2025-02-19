@@ -33,5 +33,5 @@ jobs:
     # Run unit tests for the project
     - name: Run Unit Tests
       run: |
-        echo "Running Unit Tests"
+        echo "Running Unit Tests..."
         dotnet test HouseRentingSystem.UnitTests/HouseRentingSystem.UnitTests.csproj --no-build --verbosity normal
