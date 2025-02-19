@@ -17,10 +17,9 @@ pipeline {
         stage('Setup .NET') {
             steps {
                 script {
-                    // Install .NET SDK 6.0.0 (for Linux as an example, adjust as needed for other OS)
-                    sh 'wget https://download.visualstudio.microsoft.com/download/pr/64b6990e-b2d3-4029-b17c-4e4ea02c0e19/090a0b428553fc50506cd5cf54031a62/dotnet-sdk-6.0.0-linux-x64.tar.gz'
-                    sh 'mkdir -p $HOME/dotnet && tar zxf dotnet-sdk-6.0.0-linux-x64.tar.gz -C $HOME/dotnet'
-                    sh 'export PATH=$HOME/dotnet:$PATH'
+                    // Install .NET SDK 6.0.0 (for Windows)
+                    bat 'curl -SL https://aka.ms/install-dotnet-preview -o dotnet-installer.exe'
+                    bat 'dotnet-installer.exe /quiet /norestart'
                 }
             }
         }
@@ -30,7 +29,7 @@ pipeline {
             steps {
                 script {
                     // Run dotnet restore
-                    sh 'dotnet restore'
+                    bat 'dotnet restore'
                 }
             }
         }
@@ -40,7 +39,7 @@ pipeline {
             steps {
                 script {
                     // Run dotnet build
-                    sh 'dotnet build --no-restore'
+                    bat 'dotnet build --no-restore'
                 }
             }
         }
@@ -50,7 +49,7 @@ pipeline {
             steps {
                 script {
                     // Run dotnet test with test results logging
-                    sh 'dotnet test --no-build --logger "trx;LogFileName=test_results.trx"'
+                    bat 'dotnet test --no-build --logger "trx;LogFileName=test_results.trx"'
                 }
             }
         }
