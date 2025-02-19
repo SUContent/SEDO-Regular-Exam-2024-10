@@ -33,5 +33,5 @@ jobs:
     # Run integraton tests for the project
     - name: Run Integration Tests
       run: |
-        echo "Running Integration Tests"
+        echo "Running Integration Tests..."
         dotnet test HouseRentingSystem.Tests/HouseRentingSystem.Tests.csproj --no-build --verbosity normal
