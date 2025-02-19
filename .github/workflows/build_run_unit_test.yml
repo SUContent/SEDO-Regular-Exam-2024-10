@@ -25,4 +25,4 @@ jobs:
     - name: Build
       run: dotnet build --no-restore
     - name: Run unit test
-      run: dotnet test SEDO-Regular-Exam-2024-10\HouseRentingSystem.UnitTests\HouseRentingSystem.UnitTests.csproj --no-build --verbosity normal
+      run: dotnet test HouseRentingSystem.UnitTests/HouseRentingSystem.UnitTests.csproj --no-build --verbosity normal
