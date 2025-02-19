@@ -1,4 +1,4 @@
-name: Staging Branch CI  # Workflow name
+name: Staging Build and Run Integration Tests CI  # Workflow name
 
 on:
   push:
