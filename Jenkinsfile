@@ -34,7 +34,7 @@ pipeline {
 
         stage('Run Unit Tests') {
             steps {
-                bat 'dotnet test --no-build --verbosity normal --logger "trx;LogFileName=test-results.trx"'
+                bat 'dotnet test --verbosity normal --logger "trx;LogFileName=test-results.trx"'
             }
         }
 
