@@ -21,6 +21,9 @@ jobs:
       with:
         dotnet-version: 6.0.x
 
+    - name: Install dependencies
+      run: dotnet restore HouseRentingSystem.sln  
+
     - name: Build
       run: dotnet build HouseRentingSystem.sln --no-restore
 
