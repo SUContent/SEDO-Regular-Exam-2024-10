@@ -66,7 +66,9 @@ pipeline {
     // Trigger actions on failure or success
     post {
         always {
-            // Clean up, post actions (optional)
+            steps {
+                echo "Cleaning up after build."
+            }
         }
 
         success {
