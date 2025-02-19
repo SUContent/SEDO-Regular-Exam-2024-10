@@ -1,0 +1,44 @@
+name: Build and Test
+
+on:
+  push:
+    branches: [ "develop" ]
+  pull_request:
+    branches: [ "develop" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 6.0.x
+
+    - name: Restore dependencies
+      run: dotnet restore
+
+    - name: Build
+      run: dotnet build --no-restore
+
+    - name: Run Unit Tests
+      run: dotnet test HouseRentingSystem.UnitTests/HouseRentingSystem.UnitTests.csproj --no-build --verbosity normal
+
+    - name: Publish Test Results
+      if: always() # Ensure this step runs even if tests fail
+      uses: actions/upload-artifact@v4
+      with:
+        name: test-results
+        path: TestResults/*.trx # Adjust the path to match your test results
+
+    - name: Notify Success or Failure
+      run: |
+        if [ "${{ job.status }}" == "success" ]; then
+          echo "Pipeline completed successfully!"
+        else
+          echo "Pipeline failed!"
+        fi
