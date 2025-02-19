@@ -4,19 +4,19 @@ pipeline {
     stages {
         stage("restore") {
             steps {
-                powershell 'dotnet restore'
+                sh 'dotnet restore'
             }
         }
 
         stage("build") {
             steps {
-                powershell 'dotnet build'
+                sh 'dotnet build'
             }
         }
 
         stage("test") {
             steps {
-                powershell 'dotnet test'
+                sh 'dotnet test'
             }
         }
     }
