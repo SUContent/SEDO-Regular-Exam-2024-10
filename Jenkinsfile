@@ -42,21 +42,24 @@ pipeline {
             }
         }
 
-        stage('Run Unit Tests') {
-            steps {
-                script {
+        stage('Run Tests in Parallel') {
+            parallel {
+                stage('Run Unit Tests in Parallel') {
+                    steps {
+                        script {
                     echo 'Running Unit Tests...'
                 }
                 bat 'dotnet test HouseRentingSystem.UnitTests/HouseRentingSystem.UnitTests.csproj --no-build --verbosity normal'
             }
-        }
-
-        stage('Run Integration Tests') {
-            steps {
-                script {
+                }
+                stage('Run Integration Tests in Parallel') {
+                    steps {
+                        script {
                     echo 'Running Integration Tests...'
                 }
                 bat 'dotnet test HouseRentingSystem.Tests/HouseRentingSystem.Tests.csproj --no-build --verbosity normal'
+                }
+                }
             }
         }
     }
