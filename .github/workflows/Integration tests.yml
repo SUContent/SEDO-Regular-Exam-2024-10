@@ -18,4 +18,4 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore
     - name: Run integration tests
-      run: dotnet test --filter Category=Integration
+      run: dotnet test HouseRentingSystem.Tests/HouseRentingSystem.Tests.csproj --no-build --verbosity normal
