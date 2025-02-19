@@ -2,9 +2,9 @@ name: Staging Branch CI  # Workflow name
 
 on:
   push:
-    branches: [ "staging" ]  # Trigger on pushes to develop branch
+    branches: [ "staging" ]  # Trigger on pushes to staging branch
   pull_request:
-    branches: [ "staging" ]  # Trigger on pull requests targeting develop branch
+    branches: [ "staging" ]  # Trigger on pull requests targeting staging branch
 
 jobs:
   build_test:
