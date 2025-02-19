@@ -27,8 +27,7 @@ jobs:
     - name: Build
       run: dotnet build HouseRentingSystem.sln --no-restore
 
-    - name: Run TestProject1 tests 
+    - name: Run TestProject1 tests
       run: |
         echo "Running TestProject1 tests"
-        dotnet test HouseRentingSystem.UnitTests\HouseRentingSystem.UnitTests.csproj --no-build --verbosity normal
-   
+        dotnet test HouseRentingSystem.UnitTests/HouseRentingSystem.UnitTests.csproj --no-build --verbosity normal
