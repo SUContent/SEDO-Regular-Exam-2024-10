@@ -5,7 +5,7 @@ on:
     branches: [ "staging" ]
 
 jobs:
-  build_run_unit_test:
+  build_run_integration_test:
     runs-on: ubuntu-latest
 
     steps:
@@ -19,5 +19,5 @@ jobs:
       run: dotnet restore
     - name: Build
       run: dotnet build --no-restore
-    - name: Run unit test
+    - name: Run integration test
       run: dotnet test HouseRentingSystem.Tests/HouseRentingSystem.Tests.csproj --no-build --verbosity normal
