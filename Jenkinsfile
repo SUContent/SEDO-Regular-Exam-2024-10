@@ -1,5 +1,5 @@
 pipeline {
-    agent { label 'windows' } // Използваме Windows агент
+    agent any
 
     environment {
         DOTNET_VERSION = '6.0.x' // Версия на .NET SDK
