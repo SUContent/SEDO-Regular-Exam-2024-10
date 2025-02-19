@@ -5,7 +5,7 @@ on:
     branches: [ "develop" ]
 
 jobs:
-  build:
+  build_unit_test:
 
     runs-on: ubuntu-latest
 
