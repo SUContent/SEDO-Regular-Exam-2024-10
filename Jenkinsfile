@@ -1,14 +1,14 @@
 pipeline {
-    agent {
-        docker {
-            image 'mcr.microsoft.com/dotnet/sdk:6.0'
-        }
-    }
+    agent any
 
     stages {
-        stage("Restore") {
+         stage('Restore') {
             steps {
-                sh 'dotnet restore'
+                script {
+                    docker.image('mcr.microsoft.com/dotnet/sdk:6.0').inside {
+                        sh 'dotnet restore'
+                    }
+                }
             }
         }
 
