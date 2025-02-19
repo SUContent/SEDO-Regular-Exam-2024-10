@@ -6,9 +6,8 @@ pipeline {
     }
 
     triggers {
-        // Trigger on changes pushed to any branch
-        // This will trigger the pipeline for any new branch pushed
-        gitHubPush()
+        // Trigger on changes pushed to the repository
+        githubPush()  // Corrected trigger syntax
     }
 
     stages {
