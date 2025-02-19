@@ -45,28 +45,4 @@ pipeline {
             }
         }
 
-        // Optionally, you can archive test results or publish reports
-        stage('Publish Test Results') {
-            steps {
-                junit '**/test_results.trx' // Publish the test results (Jenkins will show them)
-            }
-        }
-    }
-
-    // Trigger actions on failure or success
-    post {
-        always {
-            steps {
-                echo "Cleaning up after build."
-            }
-        }
-
-        success {
-            echo "Build and tests passed successfully!"
-        }
-
-        failure {
-            echo "Build or tests failed. Please check the logs!"
-        }
-    }
-}
+        //
