@@ -13,25 +13,7 @@ pipeline {
             }
         }
 
-        // Install Chocolatey
-        stage('Install Chocolatey') {
-            steps {
-                script {
-                    // Install Chocolatey if not already installed (only needed if you haven't installed it yet)
-                    bat 'Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString("https://community.chocolatey.org/install.ps1"))'
-                }
-            }
-        }
-
-        // Install .NET SDK using Chocolatey
-        stage('Setup .NET SDK') {
-            steps {
-                script {
-                    // Install .NET SDK via Chocolatey
-                    bat 'choco install dotnet-sdk --version=6.0.0 -y'
-                }
-            }
-        }
+        // 
 
         // Restore dependencies
         stage('Restore Dependencies') {
