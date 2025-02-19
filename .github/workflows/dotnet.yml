@@ -1,0 +1,24 @@
+name: .NET Build and test
+
+on:
+  push:
+    branches: [ "develop"]
+    
+jobs:
+  build_test:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout the repository
+      uses: actions/checkout@v4
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 9
+    - name: Restore dependencies
+      run: dotnet restore --verbosity normal
+    - name: Build
+      run: dotnet build --no-restore
+    - name: Unit test 
+      run: dotnet test HouseRentingSystem.UnitTests/HouseRentingSystem.UnitTests.csproj --no-build --verbosity normal
