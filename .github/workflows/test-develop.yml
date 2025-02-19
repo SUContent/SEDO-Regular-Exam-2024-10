@@ -1,0 +1,37 @@
+name: Develop Build and Run Unit Tests CI  
+
+on:
+  push:
+    branches: [ "develop" ]  # Trigger on pushes to develop branch
+  pull_request:
+    branches: [ "develop" ]  # Trigger on pull requests targeting develop branch
+
+jobs:
+  build_test:
+    runs-on: ubuntu-latest  # Use the latest Ubuntu runner
+
+    steps:
+
+    # Checkout the repository code
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    # Set up .NET Core SDK version 6.0.x
+    - name: Set up .NET Core 
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: 6.0.x  # Specifies the required .NET version
+
+    # Restore dependencies to generate project.assets.json
+    - name: Install dependencies
+      run: dotnet restore HouseRentingSystem.sln  
+
+    # Build the solution without restoring dependencies again
+    - name: Build
+      run: dotnet build HouseRentingSystem.sln --no-restore
+
+    # Run unit tests for the project
+    - name: Run Unit Tests
+      run: |
+        echo "Running Unit Tests..."
+        dotnet test HouseRentingSystem.UnitTests/HouseRentingSystem.UnitTests.csproj --no-build --verbosity normal
