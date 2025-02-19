@@ -16,7 +16,7 @@ pipeline {
 
         stage('Build') {
             steps {
-                bat 'dotnet build --no-restore --configuration Release'
+                bat 'dotnet test --verbosity normal'
             }
         }
 
