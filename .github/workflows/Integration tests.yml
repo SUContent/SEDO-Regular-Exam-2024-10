@@ -1,0 +1,21 @@
+name: Run Integration Tests
+
+on:
+  push:
+    branches:
+      - staging
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: '6.0.x'
+    - name: Restore dependencies
+      run: dotnet restore
+    - name: Run integration tests
+      run: dotnet test --filter Category=Integration
