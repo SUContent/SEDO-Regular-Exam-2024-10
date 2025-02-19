@@ -5,6 +5,12 @@ pipeline {
         DOTNET_VERSION = '6.0.0' // Use .NET 6.0.0
     }
 
+    triggers {
+        // Trigger on changes pushed to any branch
+        // This will trigger the pipeline for any new branch pushed
+        gitHubPush()
+    }
+
     stages {
         // Checkout code from the repository
         stage('Checkout Code') {
