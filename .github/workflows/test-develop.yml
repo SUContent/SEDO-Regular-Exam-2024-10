@@ -1,0 +1,22 @@
+name: Develop Branch CI
+
+on:
+  push:
+    branches: [ "develop" ]
+  pull_request:
+    branches: [ "develop" ]
+
+jobs:
+  build_test:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Build
+      run: dotnet build HouseRentingSystem.sln --no-restore
+
+    - name: Run TestProject1 tests 
+      run: |
+        echo "Running TestProject1 tests"
+        dotnet test HouseRentingSystem.UnitTests\HouseRentingSystem.UnitTests.csproj --no-build --verbosity normal
+   
