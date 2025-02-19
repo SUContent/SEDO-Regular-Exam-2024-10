@@ -2,17 +2,10 @@ pipeline {
     agent any
 
     stages {
-        stage('Checkout') {
-            steps {
-                // Clones the repository
-                checkout scm
-            }
-        }
-
         stage('Restore') {
-        steps {
-            sh 'dotnet restore'
-        }
+            steps {
+                sh 'dotnet restore'
+            }
     }
 
         stage("Build") {
