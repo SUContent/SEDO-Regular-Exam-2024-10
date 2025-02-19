@@ -1,4 +1,4 @@
-name: Develop Branch CI  # Workflow name
+name: Develop Build and Run Unit Tests CI  
 
 on:
   push:
