@@ -2,9 +2,9 @@ pipeline {
     agent any
 
     stages {
-         stage('Install wget') {
+          stage('Install wget') {
             steps {
-                sh 'sudo apt-get update && sudo apt-get install -y wget'
+                sh 'apt-get update && apt-get install -y wget'
             }
         }
 
