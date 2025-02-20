@@ -1,10 +1,6 @@
 pipeline {
     agent any
 
-    environment {
-        DOTNET_VERSION = "6.0.x"
-    }
-
     stages {
         stage('Restore Dependencies') {
             steps {
