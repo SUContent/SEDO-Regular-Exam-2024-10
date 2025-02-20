@@ -2,6 +2,11 @@ pipeline {
     agent any
 
     stages {
+         stage('Install wget') {
+            steps {
+                sh 'sudo apt-get update && sudo apt-get install -y wget'
+            }
+        }
 
         stage('Setup .NET') {
             steps {
