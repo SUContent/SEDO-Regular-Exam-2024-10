@@ -14,7 +14,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                she 'dotnet test'
+                sh 'dotnet test'
             }
         }
     }
