@@ -2,7 +2,7 @@
 {
     public interface IAgentService
     {
-        //bool UserHasRents(string userId);
+        //bool some change UserHasRents(string userId);
 
         bool AgentWithPhoneNumberExists(string phoneNumber);
        
