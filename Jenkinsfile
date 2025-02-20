@@ -2,17 +2,6 @@ pipeline {
     agent any
 
     stages {
-        stage('Setup .NET') {
-            steps {
-                sh '''
-                # Install .NET SDK via Homebrew
-                brew update
-                brew install dotnet
-                export PATH="/usr/local/share/dotnet:$PATH"
-                '''
-            }
-        }
-
         stage('Restore Dependencies') {
             steps {
                 sh 'dotnet restore'
