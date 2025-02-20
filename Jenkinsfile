@@ -6,9 +6,6 @@ pipeline {
         SOLUTION_FILE = 'HouseRentingSystem.sln'  // Update with your .NET solution file name
     }
 
-    triggers {
-        githubPush(branch: 'feature-ci-pipeline', triggerOnPush: true)  // Only triggers on this branch
-    }
     stages {
         stage('Restore Dependencies') {
             steps {
