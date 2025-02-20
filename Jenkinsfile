@@ -4,10 +4,12 @@ pipeline {
     stages {
         stage('Setup .NET') {
             steps {
-                sh 'curl -fsSL https://dot.net/v1/dotnet-install.sh -o dotnet-install.sh'
-                sh 'chmod +x dotnet-install.sh'
-                sh './dotnet-install.sh --version 6.0.0'
-                sh 'export PATH="$HOME/.dotnet:$PATH"'
+                sh '''
+                # Install .NET SDK via Homebrew
+                brew update
+                brew install dotnet
+                export PATH="/usr/local/share/dotnet:$PATH"
+                '''
             }
         }
 
@@ -30,6 +32,7 @@ pipeline {
         }
     }
 }
+
 
 
 
