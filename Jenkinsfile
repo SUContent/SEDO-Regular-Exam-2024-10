@@ -9,7 +9,7 @@ pipeline {
     triggers {
         gitlab(branch: 'feature-ci-pipeline', triggerOnPush: true)  // Only triggers on this branch
     }
-
+    stages {
         stage('Restore Dependencies') {
             steps {
                 script {
