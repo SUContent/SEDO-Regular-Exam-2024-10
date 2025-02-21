@@ -1,23 +1,23 @@
-// This pipeline is meant to be run locally
+// This pipeline is meant to be run locally (on the machine, currently testing the code)
 pipeline {
     agent any
     
     stages {
-        stage ("Restore project dependencies") {
+        stage ('Restore project dependencies') {
             steps {
                 bat 'dotnet restore'
             }
         }
     
-        stage ("Build app") {
+        stage ('Build app') {
             steps {
-              bat 'dotnet build --no-restore'
+                bat 'dotnet build --no-restore'
             }
         }
     
-        stage ("Run all tests") {
+        stage ('Run all tests') {
             steps {
-              bat 'dotnet test --no-build --verbosity normal'
+                bat 'dotnet test --no-build --verbosity normal'
             }
         }
     }
