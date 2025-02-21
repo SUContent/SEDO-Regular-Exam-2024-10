@@ -12,6 +12,14 @@ pipeline {
             }
         }
 
+        stage('Install Dependencies') {
+            steps {
+                script {
+                    sh 'apt-get update && apt-get install -y wget'
+                }
+            }
+        }
+
         stage('Install .NET SDK') {
             steps {
                 script {
