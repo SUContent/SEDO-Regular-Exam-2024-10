@@ -19,7 +19,7 @@ pipeline {
 
         stage('Test') {
             steps {
-                // Run tests for the specified project
+                // Run tests for the specified projects
                 bat 'dotnet test --no-build --verbosity normal'
             }
         }
