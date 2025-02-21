@@ -17,9 +17,19 @@ pipeline {
                 script {
                     if (!fileExists('/usr/local/bin/dotnet')) {
                         echo 'Installing .NET SDK...'
-                        sh 'curl -SL https://download.visualstudio.microsoft.com/download/pr/87f2e678-b4d0-42bc-b351-6262c513d071/7c245c7582c0935778a50d6f69bfa8d2/dotnet-sdk-6.0.100-linux-x64.tar.gz -o dotnet-sdk-6.0.100-linux-x64.tar.gz'
+                        
+                        sh 'apt-get update && apt-get install -y curl tar file'
+
+                        sh '''
+                            curl -SL https://download.visualstudio.microsoft.com/download/pr/87f2e678-b4d0-42bc-b351-6262c513d071/7c245c7582c0935778a50d6f69bfa8d2/dotnet-sdk-6.0.100-linux-x64.tar.gz -o dotnet-sdk-6.0.100-linux-x64.tar.gz
+                            file dotnet-sdk-6.0.100-linux-x64.tar.gz  # Check the file type
+                        '''
+                        
+                        sh 'if ! file dotnet-sdk-6.0.100-linux-x64.tar.gz | grep -q "gzip compressed data"; then exit 1; fi'
+
                         sh 'tar -xvf dotnet-sdk-6.0.100-linux-x64.tar.gz'
-                        sh 'sudo mv dotnet /usr/local/bin'
+                        sh 'mv dotnet /usr/local/bin'
+
                         sh 'rm dotnet-sdk-6.0.100-linux-x64.tar.gz'
                     }
                 }
