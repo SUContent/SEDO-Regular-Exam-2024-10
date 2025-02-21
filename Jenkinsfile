@@ -20,5 +20,11 @@ pipeline {
                 bat 'dotnet test --no-build --verbosity normal'
             }
         }
+
+        stage('Print message') {
+            steps {
+                echo 'Pipeline completed! :)'
+            }
+        }
     }
 }
