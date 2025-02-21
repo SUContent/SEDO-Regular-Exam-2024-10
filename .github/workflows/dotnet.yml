@@ -2,7 +2,7 @@ name: Housing App Build and Test develop branch
 
 on:
   push:
-    branches: [ "staging" ]
+    branches: [ "develop", "staging" ]
 
 jobs:
   build:
