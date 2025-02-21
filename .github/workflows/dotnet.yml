@@ -1,4 +1,4 @@
-name: Build and run the unit tests
+name: Build and run the Integration tests
 
 on:
   push:
@@ -20,5 +20,5 @@ jobs:
       run: dotnet restore
     - name: Build
       run: dotnet build --no-restore
-    - name: Run Unit Tests
+    - name: Run Integration Tests
       run: dotnet test HouseRentingSystem.Tests/HouseRentingSystem.Tests.csproj --no-build --verbosity normal
