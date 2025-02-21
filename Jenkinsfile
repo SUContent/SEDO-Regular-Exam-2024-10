@@ -1,10 +1,6 @@
 pipeline {
     agent any
-
-    environment {
-        DOTNET_VERSION = '6.0.x'
-    }
-
+    
     stages {
 
         stage('Restore dependencies') {
@@ -26,13 +22,6 @@ pipeline {
                 // Run tests for the specified project
                 bat 'dotnet test --no-build --verbosity normal'
             }
-        }
-    }
-
-    post {
-        always {
-            // This block runs after the pipeline finishes, no matter the result
-            echo 'Cleaning up...'
         }
     }
 }
