@@ -24,10 +24,4 @@ pipeline {
             }
         }
     }
-
-    post {
-        always {
-            junit '**/TestResults/*.xml' // Collect test results if applicable
-        }
-    }
 }
