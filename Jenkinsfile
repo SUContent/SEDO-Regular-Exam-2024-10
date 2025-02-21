@@ -1,7 +1,7 @@
 pipeline {
-    agent {
-        label 'Agent1'
-    }
+    // agent {
+    //     label 'Agent1'
+    // }
 
     stages {
         stage('Restore Dependencies') {
