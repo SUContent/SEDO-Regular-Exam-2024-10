@@ -2,10 +2,7 @@ name: Housing App Build and Test
 
 on:
   push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
-
+    branches: [ "develop", "staging" ]
 jobs:
   build:
 
