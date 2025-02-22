@@ -1,5 +1,10 @@
 pipeline {
-    agent any
+    agent {
+        docker {
+            image 'mcr.microsoft.com/dotnet/sdk:6.0'
+            args '-v /var/run/docker.sock:/var/run/docker.sock' // Optional: if you need docker within docker
+        }
+    }
   
     stages {
         stage('Build and Run Tests') {
