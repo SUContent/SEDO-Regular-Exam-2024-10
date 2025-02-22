@@ -1,0 +1,29 @@
+name: Exam preparation 1 - Configure GitHub Actions per task 3
+
+on:
+  push:
+    branches: [ "develop", "staging" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 6.0.x
+    - name: Restore dependencies
+      run: dotnet restore
+    - name: Build
+      run: dotnet build --no-restore
+    - name: Run Unit tests when push to the Develop branch
+      if: github.ref == 'refs/heads/develop'
+      run: dotnet test HouseRentingSystem.UnitTests/HouseRentingSystem.UnitTests.csproj --no-build --verbosity normal
+    - name: Run Integration tests when push to the Staging branch
+      if: github.ref == 'refs/heads/staging'
+      run: dotnet test HouseRentingSystem.Tests/HouseRentingSystem.Tests.csproj --no-build --verbosity normal
