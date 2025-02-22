@@ -10,7 +10,7 @@ namespace HouseRentingSystem.Services.Agents
         public AgentService(HouseRentingDbContext data)
            => this.data = data;
 
-        //public bool UserHasRents(string userId)
+        //public bool UserHasRents(string userId)sdadas
           //  => this.data.Houses.Any(h => h.RenterId == userId);
 
         public bool AgentWithPhoneNumberExists(string phoneNumber)
