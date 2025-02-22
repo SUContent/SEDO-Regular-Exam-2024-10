@@ -10,9 +10,9 @@ pipeline {
         stage('Build and Run Tests') {
             steps {
                 script {
-                    bat 'dotnet restore'
-                    bat 'dotnet build --no-restore'
-                    bat 'dotnet test --no-build --verbosity normal'
+                    sh 'dotnet restore'
+                    sh 'dotnet build --no-restore'
+                    sh 'dotnet test --no-build --verbosity normal'
                 }
             }
         }
