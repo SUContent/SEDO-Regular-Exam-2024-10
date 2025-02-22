@@ -2,7 +2,7 @@ name: Build and Test unit tests
 
 on:
   push:
-    branches: [ "develop" ]
+    branches: [ "staging" ]
 
 jobs:
   build_run_unit_tests:
