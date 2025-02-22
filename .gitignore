@@ -1,0 +1,67 @@
+bin
+obj
+# Ignore build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Dd]ist/
+[Dd]istros/
+[Dd]ebug/
+[Dd]ebugPublic/
+bin/
+obj/
+
+# User-specific files
+.vs/
+.vscode/
+.idea/
+
+# User-specific files for Visual Studio for Mac
+.vscode/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Windows Installer file patches
+*.wixpdb
+
+# Windows Installer debug logs
+*.wixlog
+
+# Windows Installer generated log files
+*.wixpdb
+
+# Windows Installer generated files
+*.wixproj
+*.wixproj.user
+
+# Uncomment if you have tasks that create project's static web assets in wwwroot
+#wwwroot/
+
+# Windows Installer log files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# ASP.NET
+# User-specific files
+web.config
+appsettings.json
+
+# .NET Core
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# VS for Mac
+.vscode/
+
+# Windows Installer debug log
+*.cab
+
+# ASP.NET files
+web.config
+appsettings.json
