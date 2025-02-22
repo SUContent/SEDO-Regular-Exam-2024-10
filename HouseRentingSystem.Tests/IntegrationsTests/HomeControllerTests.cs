@@ -6,7 +6,7 @@ namespace HouseRentingSystem.Tests.IntegrationsTests
     public class HomeControllerTests
     {
         private HomeController homeController;
-
+//sdadasd
         [OneTimeSetUp]
         public void SetUp()
             => this.homeController = new HomeController(null);
