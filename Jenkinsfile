@@ -16,7 +16,7 @@ pipeline {
 
         stage('Run Tests') {
             steps {
-                bat 'dotnet test HouseRentingSystem.UnitTests/HouseRentingSystem.UnitTests.csproj --no-build --verbosity normal'
+                bat 'dotnet test HouseRentingSystem.Tests/HouseRentingSystem.Tests.csproj --no-build --verbosity normal'
             }
         }
     }
