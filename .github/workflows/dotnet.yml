@@ -2,7 +2,11 @@ name: .NET
 
 on:
   push:
+<<<<<<< HEAD
     branches: [ "staging" ]
+=======
+    branches: [ "develop" ]
+>>>>>>> develop
     
 jobs:
   build:
@@ -21,4 +25,8 @@ jobs:
     - name: Build
       run: dotnet build --no-restore
     - name: Test
+<<<<<<< HEAD
       run: dotnet test HouseRentingSystem.Tests/HouseRentingSystem.Tests.csproj --no-build --verbosity normal
+=======
+      run: dotnet test HouseRentingSystem.UnitTests/HouseRentingSystem.UnitTests.csproj --no-build --verbosity normal
+>>>>>>> develop
