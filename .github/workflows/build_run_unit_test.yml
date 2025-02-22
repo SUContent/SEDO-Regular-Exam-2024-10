@@ -6,12 +6,11 @@ on:
 
 jobs:
   build_run_unit_test:
-
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout the repository
-    - uses: actions/checkout@v4
+      uses: actions/checkout@v4
     - name: Setup .NET
       uses: actions/setup-dotnet@v4
       with:
