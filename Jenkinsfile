@@ -1,19 +1,22 @@
 pipeline {
-    agent {
-        docker {
-            image 'mcr.microsoft.com/dotnet/sdk:6.0'
-            args '-v /var/run/docker.sock:/var/run/docker.sock' // Optional: if you need docker within docker
-        }
-    }
+    agent any
   
     stages {
-        stage('Build and Run Tests') {
+        stage('Restore Dependencies') {
             steps {
-                script {
-                    sh 'dotnet restore'
-                    sh 'dotnet build --no-restore'
-                    sh 'dotnet test --no-build --verbosity normal'
-                }
+                bat 'dotnet restore'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                bat 'dotnet build --no-restore'
+            }
+        }
+
+        stage('Run Tests') {
+            steps {
+                bat 'dotnet test --no-build --verbosity normal'
             }
         }
     }
