@@ -24,7 +24,7 @@ namespace HouseRentingSystem.Tests.UnitTests
             // Arrange: create a variable for the search term
             var searchTerm = "First";
 
-            // Act: invoke the service method with the term
+            // Act: invoke the service method with the termsadsadas
             var result = this.houseService.All(null, searchTerm);
 
             // Assert the returned houses' count is correct
